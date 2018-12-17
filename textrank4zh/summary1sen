@@ -8,6 +8,7 @@ from textrank4zh import TextRank4Keyword, TextRank4Sentence
 
 
 def news_summary(text):
+    tr4s = TextRank4Sentence()
     tr4s.analyze( text = text, lower = True , source  =  ' all_filters ' )
     for item in tr4s.get_key_sentences( num = 1 ):
         return item.sentence
